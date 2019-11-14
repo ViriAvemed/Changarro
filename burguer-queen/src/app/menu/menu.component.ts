@@ -13,6 +13,8 @@ export interface PeriodicElement {
   customerName: string;
   products: string;
   totalOrder: number;
+  order: any;
+  mesas: number;
 }
 @Component({
   selector: 'app-menu',
@@ -92,11 +94,17 @@ export class MenuComponent implements OnInit{
     this.orderService.deleteOrders(id);
   }
   onChangeStatus(order: any) {
+    let mesa = 0;
+    if (order.completed === true) {
+      mesa += 1;
+    }
     console.log(order);
     order.completed = true;
-    this.orderService.updateOrders(order);
+    // this.orderService.updateOrders(order);
     // console.log(this.orderService.updateOrders(order));
     console.log(order.completed);
+    console.log(mesa);
+    return mesa;
   }
 
   prueba(value) {

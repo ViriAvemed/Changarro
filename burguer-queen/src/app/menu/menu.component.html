@@ -40,7 +40,8 @@
   <div class="container2" fxLayout="column" fxLayoutAlign="center start">
     <mat-drawer-container class="example-container" autosize fxLayout="row" fxLayoutAlign="start center">
       <mat-drawer #drawer  class="container-hamburguers" mode="side" fxLayout="column" fxLayoutAlign="start center">
-        <mat-grid-list  cols="2"  class="content-table" >
+       <mat-grid-list  cols="2"  class="content-table" >
+         <div><mat-icon (click)="drawer.toggle(false) ">clear</mat-icon></div>
           <mat-grid-tile class="content-table" *ngFor="let product of products" (click)="drawer2.toggle()">
             <figure class="product-img"><img src="{{product.img}}" alt="{{product.name}}" ><p>{{product.name}}</p></figure>
           </mat-grid-tile>
@@ -50,6 +51,7 @@
       <mat-drawer #drawer2  class="product-modal" mode="side" fxLayout="column" fxLayoutAlign="start center">
         <div class="boxText" *ngFor="let product of products">
           <div class="title-product">
+            <mat-icon (click)="drawer2.toggle()">clear</mat-icon>
             <p class="nameProduct" >{{product.name}}</p>
             <figure class="product-img2"><img src="{{product.img}}" alt="{{product.name}}" ></figure>
           </div>
@@ -167,7 +169,7 @@
         <p>$ <span>{{totalOrder}}</span></p>
       </div>
       <br>
-      <button class="btn-sendOrder" (click)="onSubmit()" >Enviar a cocina</button>
+      <button class="btn-sendOrder" (click)="onSubmit(); onChangeStatus(totalOrder)"  >Enviar a cocina</button>
 
       <!-- </div> -->
 

@@ -9,7 +9,9 @@
         <!-- silvia -->
         <button class="mdl-button mdl-button--fab" (click)="openModal()">2</button>
         <button class="mdl-button mdl-button--fab" routerLinkActive="active"   (click)="openModal()">3</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">4</button>
+        <button class="mdl-button mdl-button--fab"
+        [ngClass]="{si: estadoPositivo, no: !estadoPositivo}"
+        (click)="cambiaEstado()" >4 </button>
 
     </div>
 

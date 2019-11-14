@@ -13,6 +13,7 @@ export interface Tile {
 
 
 
+// @ts-ignore
 /**
  * @title Dynamic grid-list
  */
@@ -21,14 +22,25 @@ export interface Tile {
   templateUrl: 'prueba.component.html',
   styleUrls: ['prueba.component.css'],
 })
-export class PruebaComponent  {
+export class PruebaComponent implements OnInit {
+  texto: string =  'SI';
+  estadoPositivo = true;
+
+  cambiaEstado() {
+    if (this.estadoPositivo) {
+      this.texto = (this.estadoPositivo) ?  'NO' : 'SI';
+      this.estadoPositivo = !this.estadoPositivo;
+      this.openModal();
+    }
+
+  }
+  ngOnInit() {
+  }
+
 
   tiles: Tile[] = [];
-//silvia
-  isActive = true;
-  save(e) {
-      return this.isActive;
-    }
+
+
   //Yael
   constructor(public dialog: MatDialog){}
     openModal() {
