@@ -10,10 +10,11 @@ export interface Tile {
   cols: number;
   rows: number;
   text: string;
-
-  totalOrder:number;
-
+  totalOrder: number;
+  mesa: number;
+  order: any;
 }
+
 
 @Component({
   selector: 'app-state-orden',
@@ -22,9 +23,17 @@ export interface Tile {
 })
 
 export class StateOrdenComponent {
-  constructor(public dialog: MatDialog, public orderService: OrdersService) {}
+  private order: any;
+  constructor(public dialog: MatDialog, public orderService: OrdersService) {
+    // tslint:disable-next-line:no-unused-expression
+    console.log(this.orderService.orders) ;
+  }
   openDialog() {
     this.dialog.open(DialogStatusOrdenComponent);
   }
 
-  }
+  // ngOnInit(): void {
+  //   this.getMesa(this.order.completed);
+  // }
+
+}

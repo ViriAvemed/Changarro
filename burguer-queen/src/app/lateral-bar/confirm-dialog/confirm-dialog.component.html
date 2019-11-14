@@ -10,7 +10,7 @@
         </div>
         <br><br>
         <div class="button-options">
-          <button class="password-button" mat-button [mat-dialog-close]="true">Cancelar</button>
+          <button class="password-button" mat-button (click)="onNoClick()" >Cancelar</button>
           <button type="button" class="password-button" (click)="login()" mat-button >Entrar</button>
         </div>
         <br><br>

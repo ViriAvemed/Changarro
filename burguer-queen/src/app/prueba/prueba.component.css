@@ -41,3 +41,19 @@ padding: 0;
 height: 10vh;
 }
 
+/*button {*/
+/*  padding: 15px;*/
+/*  font-size: 1.2em;*/
+/*  border-radius: 5px;*/
+/*  color: white;*/
+/*  font-weight: bold;*/
+/*  width: 70px;*/
+/*  height: 60px;*/
+/*}*/
+.si{
+  background-color: #C9C9C9 !important;
+}
+.no{
+  background-color: black !important;
+  color: white !important;
+}

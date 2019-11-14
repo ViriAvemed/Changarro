@@ -13,6 +13,8 @@ export interface PeriodicElement {
   customerName: string;
   products: string;
   totalOrder: number;
+  order: any;
+  mesas: number;
 }
 @Component({
   selector: 'app-menu',
@@ -24,47 +26,6 @@ export class MenuComponent implements OnInit{
   dataSource = new MatTableDataSource ();
   constructor(private orderService: OrdersService) {}
   showFiller = false;
-
-  'products' = [
-    {
-      name: 'Soberbia',
-      img: 'https://github.com/anabahena/MEX008-FE-Burger-Queen/blob/master/burguer-queen/src/assets/soberbia.png?raw=true',
-      pan: ['Masa Madre', 'Tradicional'],
-      type: ['Individual', 'Combo'],
-      price: [50, 65],
-      ingredientes: ['Con todo', 'Sin'],
-      Especificaciones: []
-    },
-    {
-      name: 'Malicia',
-      img: 'https://github.com/anabahena/MEX008-FE-Burger-Queen/blob/master/burguer-queen/src/assets/malicia.png?raw=true',
-      pan: ['Masa Madre', 'Tradicional'],
-      type: ['Individual', 'Combo'],
-      price: [50, 65],
-      ingredientes: ['Con todo', 'Sin'],
-      Especificaciones: []
-    },
-    {
-      name: 'Encarnación',
-      img: 'https://github.com/anabahena/MEX008-FE-Burger-Queen/blob/master/burguer-queen/src/assets/encarnacion.png?raw=true',
-      pan: ['Masa Madre', 'Tradicional'],
-      type: ['Individual', 'Combo'],
-      price: [50, 65],
-      ingredientes: ['Con todo', 'Sin'],
-      Especificaciones: []
-    },
-    {
-      name: 'Gula',
-      img: 'https://github.com/anabahena/MEX008-FE-Burger-Queen/blob/master/burguer-queen/src/assets/gula.png?raw=true',
-      pan: ['Masa Madre', 'Tradicional'],
-      type: ['Individual', 'Combo'],
-      price: [50, 65],
-      ingredientes: ['Con todo', 'Sin'],
-      Especificaciones: []
-
-    }
-  ];
-
 
   "products" = [];
 
@@ -133,11 +94,17 @@ export class MenuComponent implements OnInit{
     this.orderService.deleteOrders(id);
   }
   onChangeStatus(order: any) {
+    let mesa = 0;
+    if (order.completed === true) {
+      mesa += 1;
+    }
     console.log(order);
     order.completed = true;
-    this.orderService.updateOrders(order);
+    // this.orderService.updateOrders(order);
     // console.log(this.orderService.updateOrders(order));
     console.log(order.completed);
+    console.log(mesa);
+    return mesa;
   }
 
   prueba(value) {
