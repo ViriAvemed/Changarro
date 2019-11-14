@@ -5,13 +5,19 @@
 
 <div class="container" fxLayout = "column"  fxLayoutAlign = "start center">
     <div  fxLayout = "row"  fxLayoutAlign = "center center" class="btn-circule">
-        <button class="mdl-button mdl-button--fab" id="change-color" (click)="openModal()">1</button>
+        <button class="mdl-button mdl-button--fab" id="change-color" (dblclick)="openModal()" cdkDrag>1</button>
         <!-- silvia -->
+<<<<<<< HEAD
         <button class="mdl-button mdl-button--fab" (click)="openModal()">2</button>
         <button class="mdl-button mdl-button--fab" routerLinkActive="active"   (click)="openModal()">3</button>
         <button class="mdl-button mdl-button--fab"
         [ngClass]="{si: estadoPositivo, no: !estadoPositivo}"
         (click)="cambiaEstado()" >4 </button>
+=======
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>2</button>
+        <button class="mdl-button mdl-button--fab" routerLinkActive="active"   (dblclick)="openModal()" cdkDrag>3</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag >4</button>
+>>>>>>> d549a74f7c6cd10e26378f007812ecf9809b48da
 
     </div>
 
@@ -33,14 +39,14 @@
     <br>
     <!-- Botones de barra inferior -->
     <div  fxLayout = "row"  fxLayoutAlign = "center center">
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">5</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">6</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">7</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">8</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">9</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()"> 10</button>
-        <button class="mdl-button mdl-button--fab" (click)="openModal()">11</button>
-        <button (click)=openModal() class="mdl-button mdl-button--fab" routerLinkActive="active"   routerLink="/bill">12</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>5</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>6</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>7</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>8</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>9</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag> 10</button>
+        <button class="mdl-button mdl-button--fab" (dblclick)="openModal()" cdkDrag>11</button>
+        <button (dblclick)=openModal() class="mdl-button mdl-button--fab" routerLinkActive="active"   routerLink="/bill" cdkDrag>12</button>
     </div>
     <br>
     <br>
